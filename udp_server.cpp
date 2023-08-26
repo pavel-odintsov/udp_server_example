@@ -44,7 +44,6 @@ bool create_and_bind_socket(const std::string& host, unsigned int port, int& soc
                   << " error: " << strerror(errno) << std::endl;
 
         return false;
-        ;
     }
 
     std::cout << "Successful bind" << std::endl;
