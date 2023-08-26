@@ -12,7 +12,7 @@ uint64_t processed_udp_packets      = 0;
 uint64_t processed_udp_packets_prev = 0;
 
 bool create_and_bind_socket(const std::string& host, unsigned int port, int& sockfd) {
-    std::cout << "Netflow plugin will listen on " << host << ":" << port << " udp port" << std::endl;
+    std::cout << "Will listen on " << host << ":" << port << " udp port" << std::endl;
 
     struct addrinfo hints;
     memset(&hints, 0, sizeof hints);
@@ -90,13 +90,13 @@ int main() {
 
     int socket_fd = 0;
 
+    // Create socket with all required flags
     bool result = create_and_bind_socket(host, port, socket_fd);
 
     if (!result) {
         std::cout << "Cannot create / bind socket" << std::endl;
         exit(1);
     }
-
 
     std::cout << "Starting packet capture" << std::endl;
 
